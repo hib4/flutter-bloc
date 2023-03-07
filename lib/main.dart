@@ -7,7 +7,8 @@ import 'package:learn_bloc/04_bloc_builder/04_bloc_builder.dart';
 import 'package:learn_bloc/05_bloc_listener/05_bloc_listener.dart';
 import 'package:learn_bloc/06_bloc_consumer/06_bloc_consumer.dart';
 import 'package:learn_bloc/07_bloc_provider/07_bloc_provider.dart';
-import 'package:learn_bloc/07_bloc_provider/bloc/counter.dart';
+import 'package:learn_bloc/08_dependency_injection/bloc/counter.dart';
+import 'package:learn_bloc/08_dependency_injection/08_dependency_injection.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
       child: const MaterialApp(
         title: 'Learn BLoC',
         debugShowCheckedModeBanner: false,
-        home: LearnBlocProvider(),
+        home: LearnDependencyInjection(),
       ),
     );
   }
