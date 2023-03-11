@@ -20,7 +20,7 @@ class LearnBlocAccess extends StatelessWidget {
         child: const Icon(Icons.arrow_right_alt),
       ),
       appBar: AppBar(
-        title: const Text('Bloc Provider Value'),
+        title: const Text('Bloc Accessff'),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
