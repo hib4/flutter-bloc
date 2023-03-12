@@ -14,8 +14,9 @@ import 'package:learn_bloc/10_bloc_access/10_bloc_access.dart';
 import 'package:learn_bloc/10_bloc_access/other/other.dart';
 import 'package:learn_bloc/10_bloc_access/routes/routes.dart';
 import 'package:learn_bloc/11_multi_bloc_provider/11_multi_bloc_provider.dart';
-import 'package:learn_bloc/11_multi_bloc_provider/bloc/counter.dart';
-import 'package:learn_bloc/11_multi_bloc_provider/bloc/theme.dart';
+import 'package:learn_bloc/12_multi_bloc_listener/12_multi_bloc_listener.dart';
+import 'package:learn_bloc/12_multi_bloc_listener/bloc/counter.dart';
+import 'package:learn_bloc/12_multi_bloc_listener/bloc/theme.dart';
 
 void main() {
   runApp(MyApp());
@@ -44,7 +45,7 @@ class MyApp extends StatelessWidget {
             title: 'Learn BLoC',
             debugShowCheckedModeBanner: false,
             theme: state ? ThemeData.light() : ThemeData.dark(),
-            home: const LearnMultiBlocProvider(),
+            home: const LearnMultiBlocListener(),
           );
         },
       ),

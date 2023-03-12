@@ -16,12 +16,7 @@ class NumberWidget extends StatelessWidget {
         );
       },
       listener: (context, state) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text('Angka genap $state'),
-            duration: const Duration(milliseconds: 500),
-          ),
-        );
+
       },
       listenWhen: (previous, current) {
         if (current.isEven) {
