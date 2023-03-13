@@ -17,37 +17,24 @@ import 'package:learn_bloc/11_multi_bloc_provider/11_multi_bloc_provider.dart';
 import 'package:learn_bloc/12_multi_bloc_listener/12_multi_bloc_listener.dart';
 import 'package:learn_bloc/12_multi_bloc_listener/bloc/counter.dart';
 import 'package:learn_bloc/12_multi_bloc_listener/bloc/theme.dart';
+import 'package:learn_bloc/13_bloc_selector/13_bloc_selector.dart';
+import 'package:learn_bloc/13_bloc_selector/bloc/user_bloc.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  MyApp({Key? key}) : super(key: key);
-
-  final ThemeBloc _theme = ThemeBloc();
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider(
-          create: (context) => CounterBloc(),
-        ),
-        BlocProvider(
-          create: (context) => _theme,
-        ),
-      ],
-      child: BlocBuilder<ThemeBloc, bool>(
-        bloc: _theme,
-        builder: (context, state) {
-          return MaterialApp(
-            title: 'Learn BLoC',
-            debugShowCheckedModeBanner: false,
-            theme: state ? ThemeData.light() : ThemeData.dark(),
-            home: const LearnMultiBlocListener(),
-          );
-        },
+    return BlocProvider(
+      create: (context) => UserBloc(),
+      child: const MaterialApp(
+        title: 'Learn BLoC',
+        debugShowCheckedModeBanner: false,
+        home: LearnBlocSelector(),
       ),
     );
   }
